@@ -10,9 +10,6 @@
             <input type="email" name="Email" id="Email" placeholder="Email" required>            
             
             <input type="text" name="Celular" id="Celular" placeholder="Celular" required>
-            <label>Data da Consulta<input type="date" name="Data" id="Data" required></label>
-            <input type="text" name="NomeDent" id="NomeDent" placeholder="Nome do dentista"required>   
-
             <input type="submit" >            
     </form>
 <?php include("Footer.php");?>
