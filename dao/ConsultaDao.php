@@ -1,6 +1,6 @@
 <?php
-include_once '../model/Consulta.php';
-include_once '../common/respostas.php';
+include_once '../../model/Consulta.php';
+include_once '../../common/respostas.php';
 
 class ConsultaDao extends Consulta {
     
@@ -32,4 +32,29 @@ class ConsultaDao extends Consulta {
         }
     }
 
+    public function listar(Paciente $paciente) {
+        try {
+            $connection = new PDO('mysql:host=127.0.0.1;dbname=sistemadentista;charset=utf8', 'root', '');
+            $connection->beginTransaction();
+            $sql = "SELECT (nome) FROM paciente WHERE id=:id";
+            $preparedStatment = $connection->prepare($sql);
+            $preparedStatment->bindValue(":id",$paciente->getId());
+            $preparedStatment->execute();
+
+            $resultado=$preparedStatment->fetch(PDO::FETCH_ASSOC);
+            $connection->commit();
+
+            return $resultado;
+        } catch (PDOException $exc) {
+            if ((isset($connection)) && ($connection->inTransaction())) {
+                $connection->rollBack();
+            }
+            echo $exc->getMessage();
+            return FALHA;
+        } finally {
+            if (isset($connection)) {
+                unset($connection);
+            }
+        }
+    }
 }

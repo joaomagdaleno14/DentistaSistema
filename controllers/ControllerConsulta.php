@@ -1,7 +1,7 @@
 <?php 
-    include_once '../model/Consulta.php';
-    include_once '../bl/ConsultaBl.php';
-    include_once '../common/respostas.php';
+    include_once '../../model/Consulta.php';
+    include_once '../../bl/ConsultaBl.php';
+    include_once '../../common/respostas.php';
     if (isset($_POST)){
         $Consulta = new Consulta();
         $Consulta->setData($_POST['Data']);        

@@ -1,8 +1,8 @@
 <?php
 
-include_once '../model/Paciente.php';
-include_once '../common/respostas.php';
-include_once '../dao/PacienteDao.php';
+include_once '../../model/Paciente.php';
+include_once '../../common/respostas.php';
+include_once '../../dao/PacienteDao.php';
 class PacienteBl {
     
     private $pacienteDao = null;

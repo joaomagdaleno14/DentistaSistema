@@ -12,7 +12,7 @@
 <body>
     
     <div class="sidenav">
-        <a href="cadastropaciente.php">Cadastro</a>
-        <a href="manutencao.php">Consultas</a>
-        <a href="selecao.php">Listar</a>
+        <a href="../../view/Paciente/cadastro.php">Cadastro</a>
+        <a href="../../view/Consulta/manutencao.php">Consultas</a>
+        <a href="../../view/Paciente/selecao.php">Listar</a>
     </div>

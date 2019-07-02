@@ -1,5 +1,5 @@
-<?php include("Header.php");?>
-    <form action="../controllers/ControllerCadastro.php" method="POST">
+<?php include("../../view/Header.php");?>
+    <form action="../../controllers/ControllerCadastro.php" method="POST">
             <h1>Cadastro do Paciente</h1>      
             <input type="text" name="Nome" id="Nome" placeholder="Nome" required>
 
@@ -12,7 +12,7 @@
             <input type="text" name="Celular" id="Celular" placeholder="Celular" required>
             <input type="submit" >            
     </form>
-<?php include("Footer.php");?>
+<?php include("../../view/Footer.php");?>
 
 
 

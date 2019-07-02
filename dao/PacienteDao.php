@@ -1,6 +1,6 @@
 <?php
-include_once '../model/Paciente.php';
-include_once '../common/respostas.php';
+include_once '../../model/Paciente.php';
+include_once '../../common/respostas.php';
 
 class PacienteDao extends Paciente{
 
