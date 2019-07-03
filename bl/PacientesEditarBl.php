@@ -11,7 +11,7 @@ class PacienteBl {
         $this->pacienteDao = new PacienteDao();
     }
 
-    public function registrarPaciente(Paciente $paciente){        
+    public function alterarPaciente(Paciente $paciente){        
         if ($paciente->getNome() == null || 
                 $paciente->getNome() == "") {
             throw new InvalidArgumentException(""
@@ -42,7 +42,7 @@ class PacienteBl {
                     . "O número de celular do paciente esta em branco");
         }
 
-        return $this->pacienteDao->inserir($paciente);
+        return $this->pacienteDao->update($paciente);
     }
     
 }

@@ -1,14 +1,14 @@
 <?php 
-    include_once '../../model/Consulta.php';
-    include_once '../../bl/ConsultaBl.php';
-    include_once '../../common/respostas.php';
+    include_once '../model/Consulta.php';
+    include_once '../bl/ConsultaBl.php';
+    include_once '../common/respostas.php';
     if (isset($_POST)){
         $Consulta = new Consulta();
         $Consulta->setData($_POST['Data']);        
         $Consulta->setPaciente_ID($_POST['Paciente_ID']);        
-        $Consulta->setNomeDent($_POST['NomesetNomeDent']);        
-        $Consulta->setTratamento($_POST['TrsetTratamento']);        
-        $Consulta->setSituacao($_POST['SisetSituacao']);        
+        $Consulta->setNomeDent($_POST['NomeDent']);        
+        $Consulta->setTratamento($_POST['Tratamento']);        
+        $Consulta->setSituacao($_POST['Situacao']);        
         $pBl = new ConsultaBl();
         $resultado = $pBl->registrarConsulta($Consulta);
 

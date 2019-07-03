@@ -1,7 +1,7 @@
 <?php 
-    include_once '../../model/Paciente.php';
-    include_once '../../bl/PacientesBl.php';
-    include_once '../../common/respostas.php';
+    include_once '../model/Paciente.php';
+    include_once '../bl/PacientesBl.php';
+    include_once '../common/respostas.php';
     if (isset($_POST)){
         $paciente = new Paciente();
         $paciente->setNome($_POST['Nome']);        

@@ -1,8 +1,8 @@
 <?php
 
-include_once '../../model/Consulta.php';
-include_once '../../common/respostas.php';
-include_once '../../dao/ConsultaDao.php';
+include_once '../model/Consulta.php';
+include_once '../common/respostas.php';
+include_once '../dao/ConsultaDao.php';
 class ConsultaBl {
     
     private $ConsultaDao = null;

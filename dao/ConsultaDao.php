@@ -1,6 +1,6 @@
 <?php
-include_once '../../model/Consulta.php';
-include_once '../../common/respostas.php';
+include_once '../model/Consulta.php';
+include_once '../common/respostas.php';
 
 class ConsultaDao extends Consulta {
     
