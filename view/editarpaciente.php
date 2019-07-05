@@ -1,6 +1,6 @@
 <?php
     include("../dao/PacienteDao.php");
-include("../Header.php");
+include("Header.php");
 if(isset($_GET['id'])){
     $obj=$_GET['id'];
     $Paciente= new PacienteDao();
@@ -24,7 +24,7 @@ if(isset($_GET['id'])){
     </div>
     </div>
 </form>
-<?php include("../../Footer.php");?>
+<?php include("Footer.php");?>
 
 
 

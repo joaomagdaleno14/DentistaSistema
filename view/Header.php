@@ -13,6 +13,6 @@
     
     <div class="sidenav">
         <a href="cadastropaciente.php">Cadastro</a>
-        <a href="manutencaoconsulta.php">Consultas</a>
+        <a href="matutencaoconsulta.php">Consultas</a>
         <a href="selecaopaciente.php">Listar</a>
     </div>

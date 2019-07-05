@@ -1,6 +1,6 @@
 <?php 
     include_once '../model/Paciente.php';
-    include_once '../bl/PacientesBl.php';
+    include_once '../bl/PacientesEditarBl.php';
     include_once '../common/respostas.php';
     if (isset($_POST)){
         $Paciente = new Paciente();

@@ -44,6 +44,7 @@ class PacienteDao extends Paciente{
             $connection->commit();
 
             return $resultado;
+            var_dump($resultado);
         } catch (PDOException $exc) {
             if ((isset($connection)) && ($connection->inTransaction())) {
                 $connection->rollBack();
@@ -61,7 +62,7 @@ class PacienteDao extends Paciente{
         try {
             $connection = new PDO('mysql:host=127.0.0.1;dbname=sistemadentista;charset=utf8', 'root', '');
             $connection->beginTransaction();
-            $sql = "SELECT nome FROM paciente WHERE id=$obj";
+            $sql = "SELECT * FROM paciente WHERE id = $obj";
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->execute();
 
@@ -89,16 +90,13 @@ class PacienteDao extends Paciente{
             $sql = "UPDATE paciente SET
             Nome = :Nome,  DtNasc = :DtNasc, Celular = :Celular, Email = :Email, Senha = :Senha WHERE ID = :id";
             $preparedStatment = $connection->prepare($sql);
-            $preparedStatment->bindValue(":id",$paciente->getid());
+            $preparedStatment->bindValue(":id",$paciente->getId());
             $preparedStatment->bindValue(":Nome",$paciente->getNome());
             $preparedStatment->bindValue(":DtNasc",$paciente->getDtNasc());
             $preparedStatment->bindValue(":Celular",$paciente->getCelular());
             $preparedStatment->bindValue(":Email",$paciente->getEmail());
-
             $preparedStatment->execute();
             $connection->commit();
-
-            return $resultado;
         } catch (PDOException $exc) {
             if ((isset($connection)) && ($connection->inTransaction())) {
                 $connection->rollBack();
@@ -117,7 +115,7 @@ class PacienteDao extends Paciente{
         try {
             $connection = new PDO('mysql:host=127.0.0.1;dbname=sistemadentista;charset=utf8', 'root', '');
             $connection->beginTransaction();
-            $sql = "SELECT * FROM consulta WHERE Paciente_ID=$obj";
+            $sql = "SELECT * FROM consulta WHERE Paciente_ID =$obj";
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->execute();
 

@@ -3,9 +3,9 @@
 include_once '../model/Paciente.php';
 include_once '../common/respostas.php';
 include_once '../dao/PacienteDao.php';
-class PacienteBl {
+class PacienteEditarBl {
     
-    private $pacienteDao = null;
+    private $pacienteDao;
     
     function __construct() {
         $this->pacienteDao = new PacienteDao();

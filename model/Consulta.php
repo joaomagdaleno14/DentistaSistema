@@ -1,12 +1,13 @@
 <?php
 
-include_once './Paciente.php';
+include_once 'Paciente.php';
 
 class Consulta {
 
     private $id;
     private $NomeDent;
     private $Data;
+    private $Paciente_ID;
     private $Situacao;
     private $paciente;
 
@@ -22,6 +23,9 @@ class Consulta {
     }
     public function getData() {
         return $this->Data;
+    }
+    public function getPaciente_ID(){
+        return $this->Paciente_ID;
     }
     public function getTratamento() {
         return $this->Tratamento;
@@ -39,6 +43,9 @@ class Consulta {
     }
     public function setData($Data) {
         $this->Data = $Data;
+    }
+    public function setPaciente_ID($Paciente_ID) {
+        $this->Paciente_ID = $Paciente_ID;
     }
     public function setTratamento($Tratamento) {
         $this->Tratamento = $Tratamento;
