@@ -88,7 +88,7 @@ class PacienteDao extends Paciente{
             $connection = new PDO('mysql:host=127.0.0.1;dbname=sistemadentista;charset=utf8', 'root', '');
             $connection->beginTransaction();
             $sql = "UPDATE paciente SET
-            Nome = :Nome,  DtNasc = :DtNasc, Celular = :Celular, Email = :Email, Senha = :Senha WHERE ID = :id";
+            Nome = :Nome,  DtNasc = :DtNasc, Celular = :Celular, Email = :Email WHERE ID = :id";
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->bindValue(":id",$paciente->getId());
             $preparedStatment->bindValue(":Nome",$paciente->getNome());

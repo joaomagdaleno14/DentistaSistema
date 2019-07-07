@@ -2,8 +2,6 @@
 include_once '../dao/PacienteDao.php';
 $Paciente= new PacienteDao();
 $BFetch=$Paciente->listar();
-// $BFetch=['Nome'];
-var_dump($BFetch);
 ?>
 <?php include("Header.php");?>
     <form action="../controllers/ControllerConsulta.php" method="POST">

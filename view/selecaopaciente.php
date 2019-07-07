@@ -3,7 +3,7 @@
     include("Header.php")
 ?>
 <table class="Tabela">
-    <h1>Seleção dos Pacientes<h1>
+    <h1>Seleção dos Pacientes</h1>
         <tr>
             <td>Nome</td>
             <td>Nascimento</td>
