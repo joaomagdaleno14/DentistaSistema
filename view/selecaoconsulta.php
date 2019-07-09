@@ -20,6 +20,8 @@
             $BFetch=$Consulta->listar();
             $Paciente= new PacienteDao();
             $Fetch=$Paciente->listar();
+
+            foreach($BFetch as $row){
         ?>
         <tr>
             <td><?php echo $BFetch['Data'];?></td>
@@ -35,6 +37,8 @@
 
 
         </tr>
+        <?php  
+        }?>
     </table>
 <?php 
     include("Footer.php")

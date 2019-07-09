@@ -38,7 +38,7 @@ class ConsultaDao extends Consulta {
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->execute();
 
-            $resultado=$preparedStatment->fetch(PDO::FETCH_ASSOC);
+            $resultado=$preparedStatment->fetchAll(PDO::FETCH_ASSOC);
             $connection->commit();
 
             return $resultado;
