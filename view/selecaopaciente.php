@@ -16,19 +16,19 @@
         <!---- Estrutura de Loop ------>
 
         <?php $Paciente= new PacienteDao();
-            $BFetch=$Paciente->listar();
+            $BFetch=$Paciente->listarFetchAll();
             foreach($BFetch as $row){
         ?>
         <tr>
-            <td><?php echo $BFetch['Nome'];?></td>
-            <td><?php echo $BFetch['DtNasc'];?></td>
-            <td><?php echo $BFetch['Endereco'];?></td>
-            <td><?php echo $BFetch['Email'];?></td>
-            <td><?php echo $BFetch['Celular'];?></td>
+            <td><?php echo $row['Nome'];?></td>
+            <td><?php echo $row['DtNasc'];?></td>
+            <td><?php echo $row['Endereco'];?></td>
+            <td><?php echo $row['Email'];?></td>
+            <td><?php echo $row['Celular'];?></td>
 
             <td>
-                <a href="<?php echo "editarpaciente.php?id=".$BFetch['ID'].";"?>"><img src="../img/edit.png" alt="Editar"></a>
-                <a class="Deletar" href="<?php echo "../Controllers/ControllerDelete.php?id={$BFetch['ID']}"; ?>"><img src="../img/delete.png" alt="Deletar"></a>
+                <a href="<?php echo "editarpaciente.php?id=".$row['ID'].";"?>"><img src="../img/edit.png" alt="Editar"></a>
+                <a class="Deletar" href="<?php echo "../Controllers/ControllerDelete.php?id={$row['ID']}"; ?>"><img src="../img/delete.png" alt="Deletar"></a>
             </td>
 
 

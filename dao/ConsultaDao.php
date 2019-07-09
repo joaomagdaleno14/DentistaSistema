@@ -30,11 +30,11 @@ class ConsultaDao extends Consulta {
         }
     }
 
-    public function listar() {
+    public function listarFetchAll() {
         try {
             $connection = new PDO('mysql:host=127.0.0.1;dbname=sistemadentista;charset=utf8', 'root', '');
             $connection->beginTransaction();
-            $sql = "SELECT * FROM consulta";
+            $sql = "SELECT *, paciente.Nome FROM consulta join paciente on consulta.Paciente_ID = paciente.ID";
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->execute();
 
