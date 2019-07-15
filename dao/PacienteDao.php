@@ -16,9 +16,10 @@ class PacienteDao extends Paciente{
             $preparedStatment->bindValue(":Endereco",$paciente->getEndereco());
             $preparedStatment->bindValue(":Email",$paciente->getEmail());
             $preparedStatment->bindValue(":Celular",$paciente->getCelular());
-            $preparedStatment->execute();
+            $resultado = $preparedStatment->execute();
             $connection->commit();
-           return SUCESSO;
+
+           return $resultado;
         } catch (PDOException $exc) {
             if ((isset($connection)) && ($connection->inTransaction())) {
                 $connection->rollBack();
@@ -39,7 +40,6 @@ class PacienteDao extends Paciente{
             $sql = "SELECT * FROM paciente";
             $preparedStatment = $connection->prepare($sql);
             $preparedStatment->execute();
-
             $resultado=$preparedStatment->fetch(PDO::FETCH_ASSOC);
             $connection->commit();
 
@@ -121,8 +121,9 @@ class PacienteDao extends Paciente{
             $preparedStatment->bindValue(":DtNasc",$paciente->getDtNasc());
             $preparedStatment->bindValue(":Celular",$paciente->getCelular());
             $preparedStatment->bindValue(":Email",$paciente->getEmail());
-            $preparedStatment->execute();
+            $resultado = $preparedStatment->execute();
             $connection->commit();
+            return $resultado;
         } catch (PDOException $exc) {
             if ((isset($connection)) && ($connection->inTransaction())) {
                 $connection->rollBack();
