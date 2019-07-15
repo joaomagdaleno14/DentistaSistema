@@ -30,7 +30,7 @@
             //configuração do usuário do gmail
             $mail->SMTPAuth = true; 
             $mail->Username = 'joaomagdaleno.14@gmail.com'; // usuario gmail.   
-            $mail->Password = 'wunsaM-xakby4-hirfun'; // senha do email.
+            $mail->Password = ''; // senha do email.
 
             $mail->SingleTo = true; 
 
