@@ -1,7 +1,9 @@
 <?php
 include_once '../dao/PacienteDao.php';
 $Paciente= new PacienteDao();
-$BFetch=$Paciente->listar();
+$BFetch=$Paciente->listarFetchAll();
+var_dump($BFetch);
+
 ?>
 <?php include("Header.php");?>
     <form action="../controllers/ControllerConsulta.php" method="POST">
@@ -10,7 +12,9 @@ $BFetch=$Paciente->listar();
         <input type="date" name="Data" id="Data" required>
         
         <select name="Paciente_ID">
-            <option  value="<?php echo $BFetch['ID']; ?>"><?php echo $BFetch['Nome']; ?></option>
+            <?php foreach($BFetch as $row){ ?>
+            <option  value="<?php echo $row['ID']; ?>"><?php echo $row['Nome']; ?></option>
+            <?php }?>
         </select>
         
         <input type="text" name="NomeDent" id="NomeDent" placeholder="Nome do dentista"required>      
