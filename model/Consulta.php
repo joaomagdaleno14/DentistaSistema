@@ -10,6 +10,7 @@ class Consulta {
     private $Paciente_ID;
     private $Situacao;
     private $paciente;
+    private $Tratamento;
 
     function __construct() {
         $this->paciente = new Paciente();
@@ -33,6 +34,9 @@ class Consulta {
     public function getSituacao() {
         return $this->Situacao;
     }
+    public function getPaciente() {
+        return $this->paciente;
+    }
 
 
     public function setId($id) {
@@ -52,5 +56,8 @@ class Consulta {
     }
     public function setSituacao($Situacao) {
         $this->Situacao = $Situacao;
+    }
+    public function setPaciente($paciente) {
+        $this->paciente = $paciente;
     }
 }

@@ -5,10 +5,10 @@ include_once '../model/Pacientes.php';
 include_once '../common/respostas.php';
 include_once '../bl/PacientesBl.php';
 
-$paciente = new Pacientes();
+$paciente = new Paciente();
 $paciente->setNome(null);
 
-$pDao = new PacientesBl();
+$pDao = new PacienteBl();
 
 echo  $pDao->registrarPaciente($paciente);
         
